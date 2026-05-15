@@ -1,6 +1,6 @@
 # Image2SVG
 
-A modern, browser-based image to SVG converter with machine learning-powered tracing technology. Convert your images to scalable vector graphics directly in your browser using WebAssembly for fast, local processing.
+A modern, browser-based image to SVG converter with computational geometry-based tracing-powered tracing technology. Convert your images to scalable vector graphics directly in your browser using WebAssembly for fast, local processing.
 
 ## Features
 
@@ -20,7 +20,7 @@ A modern, browser-based image to SVG converter with machine learning-powered tra
 - 🌓 **Dark/Light Mode**: Auto-detects system settings with manual override
 - 🚫 **No Upload Required**: Images are processed locally in your browser
 - 📥 **Auto Download**: Optional automatic download after conversion
-- 🤖 **Machine Learning**: Advanced tracing algorithm using machine learning techniques
+- 🤖 **Computational geometry-based tracing**: Advanced tracing algorithm using computational geometry-based tracing techniques
 
 ## Usage
 
@@ -69,7 +69,7 @@ We also offer a Chrome extension that allows you to convert images to SVG direct
 - **Tailwind CSS**: Utility-first CSS framework
 - **Lucide React**: Beautiful SVG icons
 - **WebAssembly**: High-performance image processing
-- **VTracer**: Advanced image tracing algorithm using machine learning
+- **VTracer**: Advanced image tracing algorithm using computational geometry-based tracing
 
 ## Contributing
 
