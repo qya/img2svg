@@ -455,7 +455,7 @@ function App() {
                 Convert images to SVG directly from your browser with our Chrome extension. Right-click any image on the web and convert it instantly.
               </p>
               <a
-                href="#"
+                href="https://github.com/qya/img2svg-extension"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium bg-[var(--accent-primary)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] transition-colors"
