@@ -508,7 +508,7 @@ function App() {
                 Privacy Policy
               </a>
               <a
-                href="https://github.com/yourusername/img2svg"
+                href="https://github.com/qya/img2svg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
