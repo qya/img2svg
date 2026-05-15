@@ -35,7 +35,7 @@ You can run Image2SVG locally using the following steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/img2svg.git
+git clone https://github.com/qya/img2svg.git
 cd img2svg
 
 # Install dependencies
@@ -56,18 +56,6 @@ npm run preview
 - Chrome/Edge (latest)
 - Firefox (latest)
 - Safari (latest)
-
-## License
-
-MIT License - see [LICENSE.md](public/license.html) for details.
-
-## Privacy Policy
-
-Your images are processed locally in your browser. We do not collect, store, or transmit any of your personal information or images to our servers. See our [Privacy Policy](public/privacy.html) for more information.
-
-## Terms of Service
-
-Please read our [Terms of Service](public/terms.html) before using Image2SVG.
 
 ## Chrome Extension
 
@@ -92,5 +80,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 If you have any questions, issues, or suggestions, please create an issue on GitHub or contact us through our repository.
 
 ---
+## License
 
-Built with ❤️ using React and WebAssembly
+MIT License - see [LICENSE] for details.
