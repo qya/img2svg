@@ -82,4 +82,4 @@ If you have any questions, issues, or suggestions, please create an issue on Git
 ---
 ## License
 
-MIT License - see [LICENSE] for details.
+MIT - see [LICENSE](LICENSE).
