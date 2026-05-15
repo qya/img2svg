@@ -206,18 +206,18 @@ function App() {
   return (
     <div className="min-h-screen bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300">
       <header className="sticky top-0 z-10 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]/95 backdrop-blur">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-full border border-[var(--accent-subtle-border)] bg-[var(--accent-subtle)] flex items-center justify-center">
-              <SVGIcon className="w-5 h-5" />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-[var(--accent-subtle-border)] bg-[var(--accent-subtle)] flex items-center justify-center shrink-0">
+              <SVGIcon className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">Scalable Vector Graphics</p>
-              <h1 className="text-2xl leading-none font-semibold">Convert Image to SVG</h1>
+            <div className="min-w-0">
+              <p className="hidden sm:block text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">Scalable Vector Graphics</p>
+              <h1 className="text-lg sm:text-2xl leading-none font-semibold truncate">Image2SVG</h1>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1 p-1 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-subtle)]">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="hidden xs:flex items-center gap-1 p-1 rounded-xl bg-[var(--bg-tertiary)] border border-[var(--border-subtle)]">
               <button
                 onClick={() => setTheme('light')}
                 className={`p-1.5 rounded-lg transition-colors ${theme === 'light' ? 'bg-[var(--bg-primary)] shadow-sm text-[var(--accent-primary)]' : 'text-[var(--text-muted)] hover:text-[var(--text-primary)]'}`}
@@ -244,15 +244,16 @@ function App() {
             {status !== 'idle' && (
               <button
                 onClick={handleReset}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm border border-[var(--border-strong)] hover:bg-[var(--bg-tertiary)] transition-colors"
+                className="flex items-center gap-2 px-2.5 py-2 sm:px-3 sm:py-2 rounded-xl text-sm border border-[var(--border-strong)] hover:bg-[var(--bg-tertiary)] transition-colors"
+                title="Start over"
               >
                 <X className="w-4 h-4" />
-                Start over
+                <span className="hidden sm:inline">Start over</span>
               </button>
             )}
             <button
               onClick={() => setShowSettings(true)}
-              className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm border border-[var(--border-strong)] hover:bg-[var(--bg-tertiary)] transition-colors"
+              className="flex items-center gap-2 px-2.5 py-2 sm:px-3 sm:py-2 rounded-xl text-sm border border-[var(--border-strong)] hover:bg-[var(--bg-tertiary)] transition-colors"
               title="Settings"
             >
               <Settings className="w-4 h-4" />
@@ -262,12 +263,12 @@ function App() {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 py-8">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-3xl mx-auto space-y-6">
           {/* Upload Area */}
           {status === 'idle' && (
             <div
-              className={`rounded-3xl p-12 text-center transition-all border ${isDragging
+              className={`rounded-3xl p-6 sm:p-12 text-center transition-all border ${isDragging
                 ? 'border-[var(--accent-primary)] bg-[var(--accent-subtle)]'
                 : 'border-[var(--border-subtle)] bg-[var(--bg-secondary)] hover:border-[var(--accent-primary)]'
                 }`}
@@ -299,7 +300,7 @@ function App() {
 
           {/* Loading State */}
           {status === 'loading' && (
-            <div className="rounded-3xl p-12 border border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
+            <div className="rounded-3xl p-6 sm:p-12 border border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
               <div className="flex flex-col items-center gap-4">
                 <div className="w-16 h-16 border-4 border-[var(--accent-primary)] border-t-transparent rounded-full animate-spin" />
                 <div className="text-center">
@@ -393,7 +394,7 @@ function App() {
               )}
 
               {/* Actions */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   onClick={downloadSVG}
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[var(--accent-primary)] hover:bg-[var(--accent-hover)] text-[var(--text-on-accent)] font-medium transition-colors"
@@ -435,7 +436,7 @@ function App() {
       </main>
 
       {/* Extension Section */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-[var(--border-subtle)]"></div>
@@ -464,8 +465,8 @@ function App() {
                 Get Extension
               </a>
             </div>
-            <div className="w-48 h-48 bg-[var(--bg-tertiary)] rounded-2xl flex items-center justify-center border border-[var(--border-subtle)]">
-              <SVGIcon className="w-24 h-24" />
+            <div className="w-32 h-32 sm:w-48 sm:h-48 bg-[var(--bg-tertiary)] rounded-2xl flex items-center justify-center border border-[var(--border-subtle)] shrink-0">
+              <SVGIcon className="w-16 h-16 sm:w-24 sm:h-24" />
             </div>
           </div>
         </div>
@@ -473,21 +474,26 @@ function App() {
 
       {/* Footer */}
       <footer className="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)]">
-        <div className="max-w-4xl mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2">
-              <SVGIcon className="w-6 h-6" />
-              <span className="text-sm text-[var(--text-muted)]">
-                © {new Date().getFullYear()} Image2SVG
-              </span>
+        <div className="max-w-4xl mx-auto px-6 py-10 sm:py-12">
+          <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-col items-center gap-3 text-center">
+              <div className="w-12 h-12 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] flex items-center justify-center shadow-sm">
+                <SVGIcon className="w-6 h-6" />
+              </div>
+              <div className="space-y-1">
+                <h4 className="font-semibold text-lg">Image2SVG</h4>
+                <p className="text-sm text-[var(--text-muted)]">
+                  Professional grade image vectorization in your browser.
+                </p>
+              </div>
             </div>
             
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
               <a
                 href="/license.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
               >
                 License
               </a>
@@ -495,26 +501,35 @@ function App() {
                 href="/terms.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
               >
-                Terms of Service
+                Terms
               </a>
               <a
                 href="/privacy.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
               >
-                Privacy Policy
+                Privacy
               </a>
               <a
                 href="https://github.com/qya/img2svg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
               >
                 GitHub
               </a>
+            </div>
+
+            <div className="pt-8 border-t border-[var(--border-subtle)] w-full flex flex-col sm:flex-row justify-between items-center gap-4">
+              <p className="text-xs text-[var(--text-muted)]">
+                © {new Date().getFullYear()} Image2SVG. All rights reserved.
+              </p>
+              <p className="text-xs text-[var(--text-muted)] flex items-center gap-1">
+                Built with <span className="text-red-500 text-base">♥</span> by the community
+              </p>
             </div>
           </div>
         </div>
@@ -522,44 +537,31 @@ function App() {
 
       {/* Settings Modal */}
       {showSettings && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[var(--bg-primary)]/80 backdrop-blur-sm">
-          <div className="w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-[var(--bg-primary)] rounded-3xl border border-[var(--border-subtle)] shadow-2xl">
-            <div className="sticky top-0 z-10 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)]/95 backdrop-blur px-6 py-4 flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full border border-[var(--accent-subtle-border)] bg-[var(--accent-subtle)] flex items-center justify-center">
-                  <Settings className="w-5 h-5 text-[var(--accent-primary)]" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md transition-all">
+          <div className="w-full max-w-4xl max-h-[90vh] flex flex-col bg-[var(--bg-primary)] rounded-[32px] border border-[var(--border-subtle)] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+            {/* Modal Header */}
+            <div className="px-6 py-5 border-b border-[var(--border-subtle)] bg-[var(--bg-primary)] flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl border border-[var(--accent-subtle-border)] bg-[var(--accent-subtle)] flex items-center justify-center shrink-0">
+                  <Settings className="w-6 h-6 text-[var(--accent-primary)]" />
                 </div>
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.16em] text-[var(--text-muted)]">Settings</p>
-                  <h1 className="text-2xl leading-none font-semibold">Conversion Settings</h1>
+                  <h2 className="text-xl font-bold tracking-tight">Conversion Settings</h2>
+                  <p className="text-xs text-[var(--text-muted)] font-medium uppercase tracking-wider">Preferences & Defaults</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <button
-                  onClick={resetSettings}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[var(--border-strong)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] transition-colors"
-                >
-                  <X className="w-4 h-4" />
-                  <span className="text-sm">Reset</span>
-                </button>
-                <button
-                  onClick={saveCurrentSettings}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium bg-[var(--accent-primary)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] transition-colors"
-                >
-                  <Check className="w-4 h-4" />
-                  Save Settings
-                </button>
-                <button
-                  onClick={() => setShowSettings(false)}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium border border-[var(--border-strong)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] transition-colors"
-                >
-                  Close
-                </button>
-              </div>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[var(--bg-tertiary)] border border-transparent hover:border-[var(--border-subtle)] text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-all"
+                title="Close settings"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
 
-            <div className="p-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Modal Content */}
+            <div className="flex-1 overflow-y-auto p-6 custom-scrollbar">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Column - General Settings */}
                 <div className="space-y-6">
                   {/* General Settings Card */}
@@ -816,6 +818,27 @@ function App() {
                   </div>
                 </div>
               </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="px-6 py-4 border-t border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50 backdrop-blur-sm flex items-center justify-end gap-3">
+              <button
+                onClick={resetSettings}
+                className="flex items-center gap-2 px-4 py-2.5 rounded-2xl text-sm font-semibold border border-[var(--border-strong)] text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] transition-all active:scale-95"
+              >
+                <X className="w-4 h-4" />
+                Reset to Defaults
+              </button>
+              <button
+                onClick={() => {
+                  saveCurrentSettings();
+                  setShowSettings(false);
+                }}
+                className="flex items-center gap-2 px-8 py-2.5 rounded-2xl text-sm font-bold bg-[var(--accent-primary)] text-[var(--text-on-accent)] hover:bg-[var(--accent-hover)] shadow-lg shadow-[var(--accent-primary)]/20 transition-all active:scale-95"
+              >
+                <Check className="w-4 h-4" />
+                Save Changes
+              </button>
             </div>
           </div>
         </div>
