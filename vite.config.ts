@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { resolve } from 'path';
+import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
   plugins: [react()],
@@ -9,14 +9,14 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: fileURLToPath(new URL('./index.html', import.meta.url)),
       },
       output: {
         entryFileNames: 'assets/[name]-[hash].js',
         chunkFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
           const info = assetInfo.name || '';
-          if (info.endsWith('.wasm')) {
+          if (info && info.slice(-5) === '.wasm') {
             return '[name][extname]';
           }
           return 'assets/[name]-[hash][extname]';
@@ -26,7 +26,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
   server: {

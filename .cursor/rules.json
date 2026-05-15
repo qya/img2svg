@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "filePatterns": ["**/*.tsx", "**/*.ts"],
+      "name": "TypeScript/TSX Rules",
+      "config": {
+        "indentSize": 2,
+        "indentStyle": "space",
+        "endOfLine": "lf",
+        "charset": "utf8",
+        "trimTrailingWhitespace": true,
+        "insertFinalNewline": true
+      }
+    },
+    {
+      "filePatterns": ["**/*.jsx", "**/*.js"],
+      "name": "JavaScript/JSX Rules",
+      "config": {
+        "indentSize": 2,
+        "indentStyle": "space",
+        "endOfLine": "lf",
+        "charset": "utf8",
+        "trimTrailingWhitespace": true,
+        "insertFinalNewline": true
+      }
+    },
+    {
+      "filePatterns": ["**/*.css", "**/*.scss"],
+      "name": "CSS/SCSS Rules",
+      "config": {
+        "indentSize": 2,
+        "indentStyle": "space",
+        "endOfLine": "lf",
+        "charset": "utf8",
+        "trimTrailingWhitespace": true,
+        "insertFinalNewline": true
+      }
+    },
+    {
+      "filePatterns": ["**/*.html"],
+      "name": "HTML Rules",
+      "config": {
+        "indentSize": 2,
+        "indentStyle": "space",
+        "endOfLine": "lf",
+        "charset": "utf8",
+        "trimTrailingWhitespace": true,
+        "insertFinalNewline": true
+      }
+    },
+    {
+      "filePatterns": ["**/*.json"],
+      "name": "JSON Rules",
+      "config": {
+        "indentSize": 2,
+        "indentStyle": "space",
+        "endOfLine": "lf",
+        "charset": "utf8",
+        "trimTrailingWhitespace": true,
+        "insertFinalNewline": true
+      }
+    }
+  ]
+}

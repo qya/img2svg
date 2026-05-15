@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "settings": {
+    "editor": {
+      "fontSize": 14,
+      "lineNumbers": "on",
+      "scrollBeyondLastLine": false,
+      "wordWrap": "on",
+      "renderWhitespace": "selection",
+      "cursorBlinking": "smooth",
+      "cursorSmoothCaretAnimation": "on"
+    },
+    "files": {
+      "exclude": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/.git/**",
+        "**/.DS_Store"
+      ]
+    },
+    "search": {
+      "exclude": [
+        "**/node_modules/**",
+        "**/dist/**",
+        "**/.git/**"
+      ]
+    },
+    "typescript": {
+      "validate": true,
+      "format": {
+        "enable": true
+      },
+      "suggest": {
+        "completion": {
+          "chainedCommands": true
+        }
+      }
+    },
+    "javascript": {
+      "validate": true,
+      "format": {
+        "enable": true
+      },
+      "suggest": {
+        "completion": {
+          "chainedCommands": true
+        }
+      }
+    },
+    "css": {
+      "validate": true,
+      "format": {
+        "enable": true
+      }
+    },
+    "html": {
+      "validate": true,
+      "format": {
+        "enable": true
+      }
+    }
+  }
+}
